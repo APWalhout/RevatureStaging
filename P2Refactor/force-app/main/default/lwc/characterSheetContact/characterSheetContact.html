@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Contact" icon-name="standard:people">
+        <div class="slds-m-around_medium">
+            <!-- Fill out to show contact when other data is loaded -->
+            <template if:true={someboolhere}>
+                <lightning-record-form
+                    object-api-name="Contact"
+                    record-id={someidhere}
+                    layout-type="Compact">
+                </lightning-record-form>
+            </template>
+            <!-- If Data failed to load -->
+            <template if:false={someboolhere}>
+                <div class="slds-text-color_error">
+                    An error has occurred while loading someboolhere
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
