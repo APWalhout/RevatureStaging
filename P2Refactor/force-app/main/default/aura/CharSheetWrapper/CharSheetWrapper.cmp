@@ -1,0 +1,37 @@
+<aura:component controller="CharSheetWrapperController" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <!--Wrapper component to hold parts-->
+    <!--need a component to display name-->
+    <!--need a component to display stats-->
+    <!--need a component to display inspiration toggle-->
+    <aura:attribute name="charSheet" type="Character_Stat_Sheet__c"/>
+    <!--<aura:registerEvent name="saveCharSheetEvent" type="c:charSheetSave"/>-->
+    <!-- NEED EVENT HANDLER HERE TO PACKAGE THE SHEET AND SEND? -->
+    <aura:handler name="saveCharSheetEvent" event="c:charSheetSave" 
+        action="{!c.handleSaveCharSheet}"/>
+        <!-- !!!!! lookat 5-1 notes, the handler's name attr must be the same as the name of the register event?? !!!!! -->
+    <!-- PAGE HEADER -->
+    <lightning:layout class="slds-page-header slds-page-header--object-home">
+        <lightning:layoutItem>
+            <lightning:icon iconName="standard:scan_card" alternativeText="Char Me"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="horizontal-medium">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Char Me</h1>
+                <h2 class="slds-text-heading--medium">Character Sheet</h2>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- END PAGE HEADER -->
+    <!-- NEW CHAR SHEET FORM -->
+    <lightning:layout>
+        <lightning:layoutItem padding="around-medium" size="8">
+            <lightning:layout>
+                <lightning:layoutItem padding="around-medium" size="8">
+                    <c:CharSheetContact/>
+                    <c:CharSheetForm/>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- END NEW CHAR SHEET FORM -->
+</aura:component>	

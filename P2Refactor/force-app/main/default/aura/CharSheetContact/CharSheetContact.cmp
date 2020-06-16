@@ -1,0 +1,31 @@
+<aura:component controller="CharSheetContactController">
+    <!-- set the component to the conroller apex class for the contact object -->
+    <aura:attribute name="contactList" type="Contact[]"/>
+    <aura:registerEvent name="saveCharSheetEvent" type="c:charSheetSave"/>
+    <!-- doInit assigns the return from the soql call of records to the contactList -->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="ownerContact" type="Id" default="{!v.contactList[0].Id}"/>
+    <!-- CREATE NEW SHEET -->
+    <div aria-labelledby="contactinfoform">
+        <!-- INLINE DEBUG -->
+        <!--<p>v dot contactList ,0, dot id: {!v.contactList[0].Id}</p>
+        <p>v dot ownerContact: {!v.ownerContact}</p>-->
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--medium">
+            <legend id="contactinfoform" class="slds-text-heading--medium slds-p-vertical--medium">
+                Owner
+            </legend>
+            <!-- OWNER FORM -->
+            <lightning:recordViewForm class="slds-form--stacked" 
+                                        objectApiName="Contact"
+                                        recordId="{!v.ownerContact}">
+                <lightning:outputField aura:id="contact" label="Owner" 
+                                        name="owner"
+                                        fieldName="Name"/>
+            </lightning:recordViewForm>
+            <!-- END OWNER FORM -->
+        </fieldset>
+        <!-- END BOXED AREA -->
+    </div>
+    <!-- END CREATE NEW SHEET -->
+</aura:component>	

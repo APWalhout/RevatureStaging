@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Save event for the Character Stat Sheet">
+    <aura:attribute name="charSheet" type="Character_Stat_Sheet__c"/>
+</aura:event>

@@ -1,0 +1,90 @@
+<aura:component controller="dnd5eRESTCallouts">
+    <aura:attribute name="newCharSheet" type="Character_Stat_Sheet__c"
+                    default="{ 'sobjectType' : 'Character_Stat_Sheet__c',
+                                'Name' : '',
+                                'Class__c' : '',
+                                'Level__c' : 1,
+                                'Strength__c' : 10,
+                                'Dexterity__c' : 10,
+                                'Constitution__c' : 10,
+                                'Intelligence__c' : 10,
+                                'Wisdom__c' : 10,
+                                'Charisma__c' : 10,
+                                'Inspiration__c' : false }"/>
+    <aura:attribute name="classes" type="String[]"/>
+    <aura:registerEvent name="saveCharSheetEvent" type="c:charSheetSave"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:flow aura:id="flowTag"/>
+    <!-- CREATE CLASS PICKLIST -->
+    <lightning:select name="classpicklist" label="Class" aura:id="classChoice">
+        <aura:iteration items="{!v.classes}" var="classPick">
+            <!--<option text="{!classPick}"/>-->
+            <option value="{!classPick}" text="{!classPick}"/>
+        </aura:iteration>
+    </lightning:select>
+    <!-- END CREATE CLASS PICKLIST -->
+    <!-- CREATE NEW SHEET -->
+    <div aria-labelledby="newcharsheetform">
+        <!-- BOXED AREA -->
+        <fieldset class="slds-box slds-theme--default slds-container--medium">
+            <legend id="newcharsheetform" class="slds-text-heading--small slds-p-vertical--medium">
+                Create Char
+            </legend>
+            <!-- CREATE NEW CHAR SHEET FORM -->
+            <form class="slds-form--stacked">
+                <lightning:input aura:id="charsheetform" label="Character Name"
+                                name="charactername"
+                                value="{!v.newCharSheet.Name}"
+                                required="true"/>
+                <!--<lightning:input aura:id="charsheetform" label="Class"
+                                name="charclass"
+                                value="{!v.newCharSheet.Class__c}"/>-->
+                <lightning:input type="number" aura:id="charsheetform" label="Str"
+                                name="charstrength"
+                                min="3"
+                                max="40"
+                                step="1"
+                                value="{!v.newCharSheet.Strength__c}"
+                                messageWhenRangeUnderflow="Enter number 3-40."/>
+                <lightning:input type="number" aura:id="charsheetform" label="Dex"
+                                name="chardexterity"
+                                min="3"
+                                max="40"
+                                step="1"
+                                value="{!v.newCharSheet.Dexterity__c}"
+                                messageWhenRangeUnderflow="Enter number 3-40."/>
+                <lightning:input type="number" aura:id="charsheetform" label="Con"
+                                name="charconstitution"
+                                min="3"
+                                max="40"
+                                step="1"
+                                value="{!v.newCharSheet.Constitution__c}"
+                                messageWhenRangeUnderflow="Enter number 3-40."/>
+                <lightning:input type="number" aura:id="charsheetform" label="Wis"
+                                name="charwisdom"
+                                min="3"
+                                max="40"
+                                step="1"
+                                value="{!v.newCharSheet.Wisdom__c}"
+                                messageWhenRangeUnderflow="Enter number 3-40."/>
+                <lightning:input type="number" aura:id="charsheetform" label="Cha"
+                                name="charcharisma"
+                                min="3"
+                                max="40"
+                                step="1"
+                                value="{!v.newCharSheet.Charisma__c}"
+                                messageWhenRangeUnderflow="Enter number 3-40."/>
+                <lightning:input type="toggle" aura:id="charsheetform" label="Inspiration"
+                                name="charinspiration"
+                                checked="{!v.newCharSheet.Inspiration__c}"/>
+                <lightning:button label="Create Character"
+                                class="slds-m-top--medium"
+                                variant="brand"
+                                onclick="{!c.clickCreate}"/>
+            </form>
+            <!-- END CREATE NEW CHAR SHEET FORM-->
+        </fieldset>
+        <!-- END BOXED AREA-->
+    </div>
+    <!-- END CREATE NEW SHEET-->
+</aura:component>	
