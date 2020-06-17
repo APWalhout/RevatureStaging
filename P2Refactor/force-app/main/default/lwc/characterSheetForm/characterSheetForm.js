@@ -37,6 +37,11 @@ export default class CharacterSheetForm extends LightningElement {
     //LWC init method
     connectedCallback(){
         //callout to the api
+        //use fetch for client side callout
+        fetch('https://www....', 
+            {method:"GET"})
+            .then((response) =>{return response.json();});//see more in the link
+            ///https://www.salesforcecodecrack.com/2019/08/make-rest-api-callout-in-lwc.html
         //create the action
         //set callback behavior handling state SUCCESS by setting apiClassList
         //enqueue the action
