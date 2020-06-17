@@ -1,11 +1,12 @@
 <template>
     <lightning-card title="Contact" icon-name="standard:people">
+        <!-- NEED a selection area for contacts to assign the contactId and retrieve the record -->
         <div class="slds-m-around_medium">
             <!-- Fill out to show contact when other data is loaded -->
             <template if:true={someboolhere}>
                 <lightning-record-form
                     object-api-name="Contact"
-                    record-id={someidhere}
+                    record-id={contactRecord.Id}
                     layout-type="Compact">
                 </lightning-record-form>
             </template>

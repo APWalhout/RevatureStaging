@@ -1,8 +1,15 @@
-import { LightningElement, api } from 'lwc';
-
+import { LightningElement, api, wire } from 'lwc';
+import { getRecord } from 'lightning/uiRecordApi';
+const fields = [
+    'Id', 
+    'Name'
+];
 export default class CharacterSheetContact extends LightningElement {
     
-    @api contactList;//array type from the aura attribute
+    @api contactId;//array type from the aura attribute contactList, modified for one record
+    
+    @wire(getRecord, {contactId: '$contactId', fields})
+    contactRecord;
 
     //LWC init method
     connectedCallback(){
