@@ -1,4 +1,5 @@
 import { LightningElement } from 'lwc';
+
 import NAME_FIELD from '@salesforce/schema/Character_Stat_Sheet__c.Name';
 import CLASS__C_FIELD from '@salesforce/schema/Character_Stat_Sheet__c.Class__c';
 import STRENGTH__C_FIELD from '@salesforce/schema/Character_Stat_Sheet__c.Strength__c';
@@ -32,4 +33,12 @@ export default class CharacterSheetForm extends LightningElement {
 
     //holds the array of classes from the api
     apiClassList;
+
+    //LWC init method
+    connectedCallback(){
+        //callout to the api
+        //create the action
+        //set callback behavior handling state SUCCESS by setting apiClassList
+        //enqueue the action
+    }
 }
