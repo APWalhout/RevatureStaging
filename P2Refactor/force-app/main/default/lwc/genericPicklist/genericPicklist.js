@@ -8,6 +8,7 @@ import getPickListValues from '@salesforce/apex/PicklistController.getPickListVa
 import getFieldLabel from '@salesforce/apex/PicklistController.getFieldLabel';
 export default class SelectComponent extends LightningElement {
 
+    //only track objects and arrays and things that need to rerender when changed
     @track options;
 	@track selectedOption;
     @track isAttributeRequired = false;
