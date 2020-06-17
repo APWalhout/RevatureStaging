@@ -1,0 +1,27 @@
+<template>
+    <!-- Taken from https://medium.com/@aneudupi/custom-picklist-component-using-lwc-e6014a0de9c5#:~:text=A%20simple%20picklist%20component%20can,the%20fly%20during%20component%20rendering. -->
+    <div class="slds-form-element">
+        <label class="slds-form-element__label">
+            <!-- Allows flexible use of component to optionally guide user -->
+            <template if:true={isAttributeRequired}>
+                <abbr title="required">*</abbr>
+            </template>
+            <span class="">{fieldLabelName}</span>
+        </label>
+        <div class="slds-form-element__control">
+            <div class="slds-select_container">
+                <!-- PICKLIST -->
+                <select class="slds-select" 
+                        onchange={selectionChangeHandler} 
+                        disabled={isPicklistDisabled}
+                        required={isAttributeRequired}>
+                    <option value="Select">Select</option>
+                    <template for:each={options} for:item="option">
+                        <option key={option.label} class="uiInputSelectOption" value={option.value}>{option.value}</option>
+                    </template>
+                </select>
+                <!-- END PICKLIST -->
+            </div>
+        </div>
+    </div>
+</template>
