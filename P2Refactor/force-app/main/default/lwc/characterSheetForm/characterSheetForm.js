@@ -38,9 +38,14 @@ export default class CharacterSheetForm extends LightningElement {
     connectedCallback(){
         //callout to the api
         //use fetch for client side callout
-        fetch('https://www....', 
+        fetch('http://www.dnd5eapi.co/api/classes/', 
             {method:"GET"})
-            .then((response) =>{return response.json();});//see more in the link
+            .then((response) => {return response.json();})
+            .then((jsonResponse) => {
+                let objData = {
+                    //bind json vars?
+                };
+            });//see more in the link
             ///https://www.salesforcecodecrack.com/2019/08/make-rest-api-callout-in-lwc.html
         //create the action
         //set callback behavior handling state SUCCESS by setting apiClassList
