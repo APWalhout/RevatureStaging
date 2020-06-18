@@ -28,7 +28,8 @@
             <lightning:layout>
                 <lightning:layoutItem padding="around-medium" size="8">
                     <c:CharSheetContact/>
-                    <c:CharSheetForm/>
+                    <!--<c:CharSheetForm/>-->
+                    <c-character-sheet-form/>
                 </lightning:layoutItem>
             </lightning:layout>
         </lightning:layoutItem>
