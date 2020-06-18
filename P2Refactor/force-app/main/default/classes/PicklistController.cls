@@ -22,12 +22,14 @@ public with sharing class PicklistController {
         }
         return options;
     }
-    @AuraEnabled
+    //didn't work because no idea what 'FieldUtilityClass' is, but wasn't needed anyway?
+    /*@AuraEnabled
     public static Map < Object, List < Map < String, String >>> getDependentOptions(String objApiName, String fieldName, String contrFieldApiName) {
         return FieldUtilityClass.getFieldDependenciesMaps(objApiName, contrFieldApiName, fieldName);
-    }
-    @AuraEnabled
+    }*/
+    /*@AuraEnabled
     public static String getFieldLabel(String objName, String fieldName) {
+        
         return FieldUtilityClass.getFieldLabel(objName, fieldName);
-    }
+    }*/
 }
