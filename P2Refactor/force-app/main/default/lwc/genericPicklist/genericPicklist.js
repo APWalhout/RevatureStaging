@@ -5,7 +5,7 @@ import {
 	track
 } from 'lwc';
 import getPickListValues from '@salesforce/apex/PicklistController.getPickListValues';
-import getFieldLabel from '@salesforce/apex/PicklistController.getFieldLabel';
+//import getFieldLabel from '@salesforce/apex/PicklistController.getFieldLabel';
 export default class SelectComponent extends LightningElement {
 
     //only track objects and arrays and things that need to rerender when changed
