@@ -62,4 +62,16 @@ export default class CharacterSheetForm extends LightningElement {
 
         */
     }
+
+    //handles successful creation/edit of a record from the form element
+    handleUpsert(event){
+        const evt = new ShowToastEvent({
+            title: "Sheet Record Created",
+            message: "Record ID: " + event.detail.id,
+            variant: "success"
+        });
+
+        this.dispatchEvent(evt);
+
+    }
 }
