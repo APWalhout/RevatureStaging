@@ -6,7 +6,8 @@
             object-api-name="Character_Stat_Sheet__c"
             layout-type="Compact"
             fields={sheetObjectFields}
-            onsuccess={handleUpsert}>
+            onsuccess={handleUpsertSuccess}
+            onerror={handleUpsertError}>
         </lightning-record-form>
     </lightning-card>
 </template>
