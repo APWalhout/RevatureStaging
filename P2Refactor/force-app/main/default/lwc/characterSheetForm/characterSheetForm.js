@@ -36,6 +36,8 @@ export default class CharacterSheetForm extends LightningElement {
 
     //LWC init method
     connectedCallback(){
+        /*
+        
         //callout to the api
         //use fetch for client side callout
         fetch('http://www.dnd5eapi.co/api/classes/', 
@@ -57,5 +59,7 @@ export default class CharacterSheetForm extends LightningElement {
         //create the action
         //set callback behavior handling state SUCCESS by setting apiClassList
         //enqueue the action
+
+        */
     }
 }
