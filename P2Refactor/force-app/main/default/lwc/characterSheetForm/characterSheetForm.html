@@ -2,12 +2,12 @@
     <!-- Need to insert a generic picklist that gets values from the API -->
     <lightning-card>
         <!-- record form documentation: https://developer.salesforce.com/docs/component-library/bundle/lightning-record-form/documentation -->
-        <lightning-record-form 
+        <lightning-record-edit-form 
             object-api-name="Character_Stat_Sheet__c"
             layout-type="Compact"
             fields="Name, Wisdom__c"
             onsuccess={handleUpsertSuccess}
             onerror={handleUpsertError}>
-        </lightning-record-form>
+        </lightning-record-edit-form>
     </lightning-card>
 </template>
