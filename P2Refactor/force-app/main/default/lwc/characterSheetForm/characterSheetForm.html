@@ -5,7 +5,7 @@
         <lightning-record-edit-form 
             object-api-name="Character_Stat_Sheet__c"
             layout-type="Compact"
-            fields="Name, Wisdom__c"
+            fields={sheetObjectFields}
             onsuccess={handleUpsertSuccess}
             onerror={handleUpsertError}>
         </lightning-record-edit-form>
