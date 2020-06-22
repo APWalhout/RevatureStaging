@@ -14,12 +14,12 @@ export default class CharacterSheetForm extends LightningElement {
 
     //variables for field assignment
     sheetObjectFields = [NAME_FIELD, 
-                         /*CLASS__C_FIELD, 
+                         CLASS__C_FIELD, 
                          STRENGTH__C_FIELD,
                          DEXTERITY__C_FIELD,
                          CONSTITUTION__C_FIELD,
                          INTELLIGENCE__C_FIELD,
-                         WISDOM__C_FIELD,*/
+                         WISDOM__C_FIELD,
                          CHARISMA__C_FIELD]; 
     characterName;
     characterClass;
