@@ -27,7 +27,7 @@
         <lightning:layoutItem padding="around-medium" size="8">
             <lightning:layout>
                 <lightning:layoutItem padding="around-medium" size="8">
-                    <c:CharSheetContact/>
+                    <!-- This component doesn't meet functionality, it was just a P2 requirement <c:CharSheetContact/>-->
                     <!--<c:CharSheetForm/>-->
                     <c:characterSheetForm/>
                 </lightning:layoutItem>
