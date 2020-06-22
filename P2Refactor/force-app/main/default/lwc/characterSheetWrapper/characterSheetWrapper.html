@@ -8,9 +8,15 @@
         <!-- END HEADING -->
 
         <!-- NEST -->
-        <lightning-layout-item padding="around-medium" size="8">
-            <c-character-Sheet-Form></c-character-Sheet-Form>
-        </lightning-layout-item>
+        <lightning-layout>
+            <lightning-layout-item padding="around-medium" size="8">
+                <lightning-layout>
+                    <lightning-layout-item padding="around-medium" size="8">
+                        <c-character-Sheet-Form></c-character-Sheet-Form>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-layout-item>
+        </lightning-layout>
         <!-- END NEST -->
     </lightning-card>
 </template>
