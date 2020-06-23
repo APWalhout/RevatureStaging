@@ -1,37 +1,33 @@
 <template>
-    <div class="slds-grid slds-gutters">
-    <div class="slds-col slds-size_6-of-12">
-        <!-- HEADING -->
-        <lightning-layout class="slds-page-header slds-page-header--object-home">
-            <lightning-layout-item>
-                <!-- class="slds-p-around_x-small" -->
-                <lightning-icon icon-name="standard:scan_card"
-                                alternative-text="Char Me"
-                                ></lightning-icon>
-            </lightning-layout-item>
-            <!-- originally the padding was horizontal-medium -->
-            <lightning-layout-item padding="horizontal-medium">
-                <div class="page-section page-header">
-                    <h1 class="slds-text-heading--label">Char Me</h1>
-                    <h2 class="slds-text-heading--medium">Character Sheet</h2>
-                </div>
-            </lightning-layout-item>
-        </lightning-layout>
-        <!-- END HEADING -->
+    <!-- HEADING -->
+    <lightning-layout class="slds-page-header slds-page-header--object-home">
+        <lightning-layout-item>
+            <!-- class="slds-p-around_x-small" -->
+            <lightning-icon icon-name="standard:scan_card"
+                            alternative-text="Char Me"
+                            ></lightning-icon>
+        </lightning-layout-item>
+        <!-- originally the padding was horizontal-medium -->
+        <lightning-layout-item padding="horizontal-medium">
+            <div class="page-section page-header">
+                <h1 class="slds-text-heading--label">Char Me</h1>
+                <h2 class="slds-text-heading--medium">Character Sheet</h2>
+            </div>
+        </lightning-layout-item>
+    </lightning-layout>
+    <!-- END HEADING -->
 
-        <!-- NEST -->
-        <!-- All these layout tags format the component into a half-page form -->
-        <!-- with labels above the input lines, and pad away from the border -->
-        <lightning-layout>
-            <lightning-layout-item padding="around-medium" size="8">
-                <lightning-layout>
-                    <lightning-layout-item padding="around-medium" size="8">
-                        <c-character-Sheet-Form></c-character-Sheet-Form>
-                    </lightning-layout-item>
-                </lightning-layout>
-            </lightning-layout-item>
-        </lightning-layout>
-        <!-- END NEST -->
-    </div>
-    </div>
+    <!-- NEST -->
+    <!-- All these layout tags format the component into a half-page form -->
+    <!-- with labels above the input lines, and pad away from the border -->
+    <lightning-layout>
+        <lightning-layout-item padding="around-medium" size="2">
+            <c-character-Sheet-Form></c-character-Sheet-Form>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-medium" size="2">
+            <c-character-Sheet-Form></c-character-Sheet-Form>
+        </lightning-layout-item>
+    </lightning-layout>
+    <!-- END NEST -->
 </template>
