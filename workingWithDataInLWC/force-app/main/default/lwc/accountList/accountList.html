@@ -1,4 +1,7 @@
 <template>
+    <template if:true={errors}>
+        <p>{errors}</p>
+    </template>
     <lightning-card>
         <template if:true={accounts.data}>
             <lightning-datatable
